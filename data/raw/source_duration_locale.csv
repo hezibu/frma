@@ -1,0 +1,152 @@
+source,species,prey_species,duration,duration_notes,units,locale,country,country_notes
+Alexander et al 2014 BIOL LETT,Micropterus salmoides,Hyperolius marmoratus,960,,n,Eastern Cape,South Africa,
+Alexander et al 2014 BIOL LETT,Clarias gariepinus,Hyperolius marmoratus,960,,n,Eastern Cape,South Africa,
+Alexander et al 2014 BIOL LETT,Sandelia capensis,Hyperolius marmoratus,960,,n,Eastern Cape,South Africa,
+Alexander et al 2014 BIOL LETT,Glossogobius callidus,Hyperolius marmoratus,960,,n,Eastern Cape,South Africa,
+Townsend and Risebrow 1982 OEC,Abramis brama,Daphnia magna,30,NA,n,Norwich,England,NA
+Koski and Johnson 2002,Oncorhynchus nerka,Daphnia spp.,10,NA,npm,Colorado,USA,NA
+Moss and Beauchamp 2007 J FISH BIOL,Oncorhynchus gorbuscha,Tisbe spp.,10,,npm,Washington,USA,
+Moss and Beauchamp 2007 J FISH BIOL,Oncorhynchus keta,Tisbe spp.,10,,npm,Washington,USA,
+Moss and Beauchamp 2007 J FISH BIOL,Oncorhynchus gorbuscha,(Americamysis bahia) Mysidopsis bahia,10,,npm,Washington,USA,
+Moss and Beauchamp 2007 J FISH BIOL,Oncorhynchus keta,(Americamysis bahia) Mysidopsis bahia,10,,npm,Washington,USA,
+Soluk 1993 ECOLOGY,Cottus bairdi,Baetis tricaudatus,1440,,n,Ontario,Canada,
+Soluk 1993 ECOLOGY,Cottus bairdi,Ephemerella subvaria,1440,,n,Ontario,Canada,
+Miller et al 1992 CAN J FISH AQUAT SCI,Alosa pseudoharengus,Artemia spp.,NA,either 15 or 30 minutes,n,Winsconsin,USA,
+Miller et al 1992 CAN J FISH AQUAT SCI,Perca flavescens,Artemia spp.,NA,either 15 or 30 minutes,n,Winsconsin,USA,
+Miller et al 1992 CAN J FISH AQUAT SCI,Coregonus hoyi,Artemia spp.,NA,either 15 or 30 minutes,n,Winsconsin,USA,
+Moustahfid et al 2010 OEC,Squalus acanthias,Clupea harengus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Squalus acanthias,Merluccius bilinearis,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Squalus acanthias,Scomber scombrus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Squalus acanthias,Doryteuthis pealeii,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Pollachius virens,Clupea harengus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Pollachius virens,Merluccius bilinearis,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Merluccius bilinearis,Clupea harengus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Merluccius bilinearis,Merluccius bilinearis,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Merluccius bilinearis,Scomber scombrus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Gadus morhua,Clupea harengus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Gadus morhua,Merluccius bilinearis,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Gadus morhua,Scomber scombrus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Urophycis tenuis,Clupea harengus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Urophycis tenuis,Merluccius bilinearis,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Lophius americanus,Clupea harengus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Lophius americanus,Scomber scombrus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Lophius americanus,Doryteuthis pealeii,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Moustahfid et al 2010 OEC,Leucoraja ocellata,Clupea harengus,NA,could be 24h-1y,mpy,northeast continental shelf region,USA,
+Gustafsson et al 2010 ECOL FRE FISH,Salmo trutta,Musca domestica,NA,until n = 5,nps,Sweden,Sweden,NA
+Gustafsson et al 2010 ECOL FRE FISH,Salmo trutta,Gammarus spp.,NA,until n = 5,nps,Sweden,Sweden,NA
+O'Brien et al 2001 CAN J FISH AQUAT RES,Thymallus arcticus,Daphnia middendorffiana,NA,until n = 100,npm,Alaska,USA,
+Buckel and Stoner 2000 J EXP MAR BIO ECOL,Pomatomus saltatrix,Menidia menidia,60,NA,nphp,New Jersey,USA,NA
+Buckel and Stoner 2000 J EXP MAR BIO ECOL,Pomatomus saltatrix,Menidia menidia,60,NA,nphpp,New Jersey,USA,NA
+Buckel and Stoner 2000 J EXP MAR BIO ECOL,Pomatomus saltatrix,Morone saxatilis,60,NA,nphp,New Jersey,USA,NA
+Buckel and Stoner 2000 J EXP MAR BIO ECOL,Pomatomus saltatrix,Morone saxatilis,60,NA,nphpp,New Jersey,USA,NA
+Anderson 2001 ECOLOGY,Paralabrax clathratus,Brachyistius frenatus,900,,npp,California,USA,
+Persson 1986 J ANIM ECOL,Rutilus rutilus,Chaoborus obscuripe,NA,until n = 10,nps,Sweden,Sweden,NA
+Persson 1986 J ANIM ECOL,Perca fluviatilis,Chaoborus obscuripe,NA,until n = 10,nps,Sweden,Sweden,NA
+Harborne 2012 CORAL REEFS,Cephalopholis cruentata,Halichoeres pictus,NA,either 22 or 47 hours,n,The Bahamas,The Bahamas,NA
+Galarowicz & Wahl 2005 CAN J FISH AQUAT SCI,Sander vitreus,Daphnia spp.,15,NA,n,Illinois,USA,NA
+Galarowicz & Wahl 2005 CAN J FISH AQUAT SCI,Sander vitreus,Cyprinus carpio,15,NA,n,Illinois,USA,NA
+Galarowicz & Wahl 2005 CAN J FISH AQUAT SCI,Sander vitreus,Chironomidae,15,NA,n,Illinois,USA,NA
+Galarowicz & Wahl 2005 CAN J FISH AQUAT SCI,Sander vitreus,Lepomis macrochirus,15,NA,n,Illinois,USA,NA
+Morales-Ventura et al 2004 J APPL ICHTHYOL,Chirostoma riojai,Brachionus rotundiformis,45,,npp,Puebla,Mexico,
+Morales-Ventura et al 2004 J APPL ICHTHYOL,Chirostoma riojai,Brachionus rubens,45,,npp,Mexico,Mexico,
+Morales-Ventura et al 2004 J APPL ICHTHYOL,Chirostoma riojai,Ceriodaphnia dubia,45,,npp,Puebla,Mexico,
+Morales-Ventura et al 2004 J APPL ICHTHYOL,Chirostoma riojai,Moina macrocopa,45,,npp,Puebla,Mexico,
+Alanis et al 2009 BRAZ ARCH BIOL & TECH,Moenkhausia sanctaefilomenae,Brachionus calyciflorus,45,,npp,Morelos,Mexico,aquaculture
+Alanis et al 2009 BRAZ ARCH BIOL & TECH,Moenkhausia sanctaefilomenae,Brachionus havanaensis,45,,npp,Morelos,Mexico,aquaculture
+Alanis et al 2009 BRAZ ARCH BIOL & TECH,Moenkhausia sanctaefilomenae,Brachionus patulus,45,,npp,Morelos,Mexico,aquaculture
+Alanis et al 2009 BRAZ ARCH BIOL & TECH,Moenkhausia sanctaefilomenae,Brachionus rubens,45,,npp,Morelos,Mexico,aquaculture
+Ware 1972 J FISHERIES RES BOARD CANADA,Oncorhynchus mykiss,Crangonyx richmondensis,50,,nps,British Columbia,Canada,
+Ryer et al 2002 CJFAS,Gadus chalcogrammus,Artemia spp.,30,,n,Washington,USA,
+Ryer et al 2002 CJFAS,Anoplopoma fimbria,Artemia spp.,30,,n,Washington,USA,
+Murray et al 2013 ETHOLOGY,Rutilus rutilus,NA,5,NA,nps,UK,UK,NA
+Murdoch et al 1975 ECOLOGY,Poecilia reticulata,Drosophila spp.,30,occasionally 1h,n,California,USA,
+Murdoch et al 1975 ECOLOGY,Poecilia reticulata,Tubifex spp.,30,occasionally 1h,n,California,USA,
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Alburnus chalcoides,Cyclops spp.,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Alburnus chalcoides,Daphnia hyalina,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Alburnus chalcoides,Bythotrephes longimanus,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Alburnus chalcoides,Leptodora kindtii,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Vimba vimba,Cyclops spp.,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Vimba vimba,Bythotrephes longimanus,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Vimba vimba,Leptodora kindtii,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Abramis brama,Cyclops spp.,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Abramis brama,Bythotrephes longimanus,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Abramis brama,Leptodora kindtii,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Rutilus rutilus,Cyclops spp.,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Rutilus rutilus,Bythotrephes longimanus,3,NA,n,Austria,Austria,NA
+Winkler and Orellana 1992 ENVIRMTAL BIOL OF FISHES,Scardinius erythrophthalmus,Bythotrephes longimanus,3,NA,n,Austria,Austria,NA
+Bryan et al 1995 CANADIAN J OF FISHERIES AND AQUA SCIES,Lepomis macrochirus,Daphnia pulex and D. magna,0.5,NA,np30s,Iowa,USA,NA
+Sandheinrich and Atchison 1989 CJFAS,Lepomis macrochirus,Daphnia pulex,0.5,,np30s,Iowa,USA,aquaculture
+Sandheinrich and Atchison 1989 CJFAS,Lepomis macrochirus,Daphnia magna,0.5,,np30s,Iowa,USA,aquaculture
+Sandheinrich and Atchison 1989 CJFAS,Lepomis macrochirus,Hyalella azteca,3,,np30s,Iowa,USA,aquaculture
+Sandheinrich and Atchison 1989 CJFAS,Lepomis macrochirus,Enallagma spp.,3,,np30s,Iowa,USA,aquaculture
+Houde and Schekter 1980 ENVIRMTAL BIOL OF FISHES,Anchoa mitchilli,"Oithona nana, Acartia tonsa, and Paracalanus parvus",960,4-12 hours,mph,Florida,USA,NA
+Houde and Schekter 1980 ENVIRMTAL BIOL OF FISHES,Archosargus rhomboidalis,"Oithona nana, Acartia tonsa, and Paracalanus parvus",960,4-12 hours,mph,Florida,USA,NA
+Houde and Schekter 1980 ENVIRMTAL BIOL OF FISHES,Achirus lineatus,"Oithona nana, Acartia tonsa, and Paracalanus parvus",960,4-12 hours,mph,Florida,USA,NA
+Barnhisel and Kerfoot 2004 J OF GREAT LAKES RSRCH,Salvelinus namaycush,Daphnia pulicaria,2,NA,npp,Michigan,USA,NA
+Barnhisel and Kerfoot 2004 J OF GREAT LAKES RSRCH,Salvelinus namaycush,Bythotrephes cederstroemi,2,NA,npp,Michigan,USA,NA
+Ware 1972 J FISH RES BOARD CAN,Oncorhynchus mykiss,Crangonyx richmondensis,50,,nps,British Columbia,Canada,
+Ware 1972 J FISH RES BOARD CAN,Oncorhynchus mykiss,Hyalella azteca,50,,nps,British Columbia,Canada,
+Letcher et al 1997 CJFAS,Perca fluviatilis,Artemia spp.,480,,npdpp,Wisconsin,USA,
+Letcher et al 1997 CJFAS,Coregonus hoyi,Artemia spp.,480,,npdpp,Wisconsin,USA,
+Letcher et al 1997 CJFAS,Alosa pseudoharengus,Artemia spp.,480,,npdpp,Wisconsin,USA,
+Czesny et al 2001 CANADIAN JOURNAL OF ZOOLOGY,Sander vitreus,Cyprinus carpio,10,,n,Ohio,USA,
+Munk and Ki?rboe 1985 MARINE ECOLOGY PROGRESS SERIES,Clupea harengus,Acartia tonsa,1,NA,npm,Baltic Sea/Downs,Denmark,NA
+Cowan et al 2016 CORAL REEFS,Acanthochromis polyacanthus,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Abudefduf sexfasciatus,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Chromis atripectoralis,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Chromis viridis,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Chrysiptera rollandi,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Dascyllus aruanus,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Dascyllus reticulatus,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Neopomacentrus azysron,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Pomacentrus moluccensis,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Amblyglyphidodon curacao,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Cowan et al 2016 CORAL REEFS,Pomacentrus amboinensis,Acanthaster spp.,60,,n,Great Barrier Reef,Australia,
+Fitzsimons et al 2006 J OF GREAT LAKES RSRCH,Neogobius melanostomus,Salvelinus namaycush,10080,NA,npd,Lake Ontario,Canada,NA
+Fitzsimons et al 2006 J OF GREAT LAKES RSRCH,Cottus cognatus,Salvelinus namaycush,10081,NA,npd,Lake Ontario,Canada,NA
+Hyatt 1980 PHD THESIS UNIVERSITY OF BRITISH COLUMBIA,Oncorhynchus mykiss,Daphnia pulex,NA,NA,npm,British Columbia,Canada,NA
+Hyatt 1980 PHD THESIS UNIVERSITY OF BRITISH COLUMBIA,Oncorhynchus nerka,Daphnia pulex,NA,NA,npm,British Columbia,Canada,NA
+De Figueiredo et al 2007 J OF THE MARINE BIOL ASSOC OF THE UK,Platichthys flesus,Euplotes sp.,180,,nphpp,Isle of Man,Isle of Man,
+Wright et al 1993 ENVIRONMENTAL BIOL OF FISHES,Paralichthys lethostigma,Leiostomus xanthurus,2880,NA,n,Neuse River Estuary,USA,NA
+Barrios-O'Neill et al 2014 J OF ANIMAL ECOL,Gasterosteus aculeatus,Daphnia magna,180,NA,n,Lough Neagh,Northern Ireland,NA
+Munk 1995 MARINE BIOLOGY,Gadus morhua,Acartia tonsa,7200,NA,npm,Kattegat,Denmark,NA
+Wasserman et al 2016 FUNCTIONAL ECOLOGY,Lepomis macrochirus,Oreochromis mossambicus,60,NA,nph,Grahamstown,South Africa,NA
+Wasserman et al 2016 FUNCTIONAL ECOLOGY,Pseudocrenilabrus philander,Oreochromis mossambicus,60,NA,nph,Grahamstown,South Africa,NA
+Wasserman et al 2016 FUNCTIONAL ECOLOGY,Tilapia sparrmanii,Oreochromis mossambicus,60,NA,nph,Grahamstown,South Africa,NA
+Oyugi et al 2012 J OF THERMAL BIOLOGY,Cyprinus carpio,NA,5,NA,nps,Southern England,England,aquaculture
+De Villemereuil and L?pez-Sepulcre 2011 ECOL MOD,Poecilia reticulata,NA,10,,n,Trinidad,Trinidad,
+De Villemereuil and L?pez-Sepulcre 2011 ECOL MOD,Anablepsoides hartii,NA,10,,n,Trinidad,Trinidad,
+Kroetz and Powers 2015 ENV BIOL FISHES,Sphyrna tiburo,Farfantepenaeus aztecus,1440,,n,Alabama,USA,
+Gibson and Ezzi 1992 J OF FISH BIOLOGY,Clupea harengus,Calanus finmarchicus,660,maybe,nps,Argyll,Scotland,
+Gibson and Ezzi 1992 J OF FISH BIOLOGY,Clupea harengus,Artemia spp.,660,maybe,nps,Argyll,Scotland,
+Murray et al 2016 HYDROBIOLOGIA,Rutilus rutilus,NA,10,,nps,Bournemouth,UK,
+Vollset and Bailey 2011 J OF FISH BIOLOGY,Gasterosteus aculeatus,Artemia spp.,5,,npm,Washington,USA,
+Alexander et al 2015 ENVIRONMENTAL BIOLOGY OF FISHES,Micropterus salmoides,Poecilia reticulata,240,,n,Grahamstown,South Africa,
+Ohlberger et al 2008 CJFAS,Coregonus albula,Daphnia magna,NA,until n = 6,npm,Lake Stechlin,Germany,
+Ohlberger et al 2008 CJFAS,Coregonus fontanae,Daphnia magna,NA,until n = 6,npm,Lake Stechlin,Germany,
+Persson and Greenberg 1990 ECOLOGY,Perca fluviatilis,Daphnia spp.,NA,10s-10m,nps,Sweden,Sweden,
+Hedgespeth et al 2014 AQUATIC TOXICOLOGY,Perca fluviatilis,Daphnia magna,NA,until n = 5 or 20minutes,npm,Lake Krankesj?n,Sweden,NA
+Bergman 1987 ENVIRONMENTAL BIOLOGY OF FISHES,Perca fluviatilis,Chaoborus obscuripes,NA,until  5 < n < 10,nps,Southern Sweden,Sweden,NA
+Bergman 1987 ENVIRONMENTAL BIOLOGY OF FISHES,Gymnocephalus cernua,Chaoborus obscuripes,NA,until  5 < n < 10,nps,Southern Sweden,Sweden,NA
+Wellington et al 2010 J OF FISH BIOLOGY,Perca flavescens,NA,60,NA,nphp,Ohio,USA,aquaculture
+Ljunggren and Sandstr?m 2007 J OF FISH BIOLOGY,Perca fluviatilis,Neomysis integer,5,,n,Sweden,Sweden,
+Ljunggren and Sandstr?m 2007 J OF FISH BIOLOGY,Sander lucioperca,Neomysis integer,5,,n,Sweden,Sweden,
+Hjelm and Johansson 2003 PRSLB,Rutilus rutilus,NA,NA,until n = 4,nps,Sweden,Sweden,
+Johansson and Leonardsson 1998 CAN J OF ZOOL,Gambusia affinis,Daphnia pulex,20,,n,Kentucky,USA,
+Johansson 1987 OECOLOGIA,Rutilus rutilus,Daphnia magna,NA,until npp = something,nps,Southern Sweden,Sweden,NA
+Johansson 1987 OECOLOGIA,Scardinius erythrophthalmus,Daphnia magna,NA,until npp = something,nps,Southern Sweden,Sweden,NA
+Johansson 1987 OECOLOGIA,Rutilus rutilus,Cyclops sp.,NA,until npp = something,nps,Southern Sweden,Sweden,NA
+Johansson 1987 OECOLOGIA,Scardinius erythrophthalmus,Cyclops sp.,NA,until npp = something,nps,Southern Sweden,Sweden,NA
+Johnson 2006 ECOLOGY,Sebastes paucispinus,"Sebastes atrovirens, S. carnatus, S. chrysomelas",2880,,npp,California,USA,
+S?rnes and Aksnes 2004 LIMNOLOGY AND OCEANOGRAPHY,Gobiusculus flavescens,Artemia sp.,10,,nps,Raunefjorden,Norway,
+Bergman 1988 J OF ANIMAL ECOLOGY,Perca fluviatilis,Daphnia magna,NA,until  5 < n < 10,nps,Southern Sweden,Sweden,NA
+Bergman 1988 J OF ANIMAL ECOLOGY,Gymnocephalus cernua,Daphnia magna,NA,until  5 < n < 10,nps,Southern Sweden,Sweden,NA
+Bergman 1988 J OF ANIMAL ECOLOGY,Perca fluviatilis,Chaoborus obscuripes,NA,until  5 < n < 10,nps,Southern Sweden,Sweden,NA
+Bergman 1988 J OF ANIMAL ECOLOGY,Gymnocephalus cernua,Chaoborus obscuripes,NA,until  5 < n < 10,nps,Southern Sweden,Sweden,NA
+Anderson et al 1978 J ANIM ECOL,Danio rerio,Daphnia magna,5,NA,n,London,England,maybe wrong
+Gulbrandsen 1991 AQUACULTURE,Hippoglossus hippoglossus,Brachionus plicatilis,4320,,n,Norway,Norway,
+Buckel and Stoner 2000 J EXP MAR BIO ECOL,Pomatomus saltatrix,"Menidia menidia, Morone saxatilis",60,NA,nphp,New Jersey,USA,NA
+Buckel and Stoner 2000 J EXP MAR BIO ECOL,Pomatomus saltatrix,"Menidia menidia, Morone saxatilis",60,NA,nphpp,New Jersey,USA,NA
+Wasserman et al 2016 FUNCTIONAL ECOLOGY,"Lepomis macrochirus, Pseudocrenilabrus philander",Oreochromis mossambicus,60,NA,nph,Grahamstown,South Africa,
+Wasserman et al 2016 FUNCTIONAL ECOLOGY,"Lepomis macrochirus,  Tilapia sparrmanii",Oreochromis mossambicus,60,NA,nph,Grahamstown,South Africa,
+Wasserman et al 2016 FUNCTIONAL ECOLOGY,"Pseudocrenilabrus philander, Tilapia sparrmanii",Oreochromis mossambicus,60,NA,nph,Grahamstown,South Africa,
