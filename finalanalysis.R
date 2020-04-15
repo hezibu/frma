@@ -57,6 +57,7 @@ model.h.source.2 <- get_function(dredged.h.source.2,summary)[[1]]
 
 
 best.model.a <- get.models(dredged.a.source.1,subset = delta==0)[[1]]
+best.model.a.no.alien <- get.models(dredged.a.source.1.no.alien,subset = delta==0)[[1]]
 best.model.a.2 <- get.models(dredged.a.source.2,subset = delta==0)[[1]]
 best.model.h <- get.models(dredged.h.source.1,subset = delta==0)[[1]]
 best.model.h.2 <- get.models(dredged.h.source.2,subset = delta==0)[[1]]
@@ -86,7 +87,7 @@ plot_model(best.model.h, type = "pred",
            terms = c("temp","ratio","log_prey [-10, 10]"))
 
 
-plot_model(best.model.h.2,type = "pred",
+plot_model(best.model.h,type = "pred",
            terms = c("log_pred [all]","temp [4, 29]"))
 
 gridExtra::grid.arrange(grobs = plot_model(best.model.h,type = "pred",

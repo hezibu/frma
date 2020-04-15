@@ -1,5 +1,8 @@
-a.forest <- fd %>%
-  randomForest(log_h ~ log_pred + log_prey + zalien + ratio + temp, data = .,localImp = T)  
+fd.forest <- fd %>% 
+  mutate(alien = zalien == "Y")
+
+a.forest <- fd.forest %>%
+  randomForest(log_a ~ log_pred + log_prey + ratio + temp + alien, data = .,localImp = T)  
 
 varImpPlot(a.forest)
 
@@ -22,7 +25,7 @@ fd %>% mutate(zalien = as.numeric(as.factor(zalien))) %>%
   
   
   
-randomForestExplainer::explain_forest()
+  randomForestExplainer::explain_forest(a.forest)
 
 fd %>% mutate(zalien = as.numeric(as.factor(zalien)),
               temp2 = temp^2) %>% 
@@ -32,8 +35,14 @@ randomForestExplainer::explain_forest()
 library(relaimpo)
 install.packages("corpcor")
 
-relaimpo::calc.relimp(best.model.a)
+relaimpo::calc.relimp(best.model.a,type = "lmg")
 
 
 h.forest <- fd %>%
   randomForest(log_h ~ log_pred + log_prey + zalien + ratio + temp, data = .,localImp = T)  
+
+randomForest::importance(a.forest)
+
+a.forest$mse
+
+caret::varImp(a.forest)

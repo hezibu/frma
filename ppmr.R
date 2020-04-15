@@ -24,13 +24,13 @@ ppmr_dredge <- par_dredge(model = ppmr_full_model,
                                  data = fd1,
                                  cores = 7)
 ppmr_best <- get_function(ppmr_dredge,summary)[[1]]
-best.model.a
+best.model.a.ppmr <- get.models(ppmr_dredge,delta == 0)[[1]]
 
-get_function(ppmr_dredge,function(m) plot_model(m,type = "int"))[[1]]
+ppmr_full_model_h <- ppmr_model(fd1,"log_h"," + (1|source)")
+ppmr_dredge_h <- par_dredge(model = ppmr_full_model_h,
+                          data = fd1,
+                          cores = 8)
+best.model.h.ppmr <- get.models(ppmr_dredge_h,delta == 0)[[1]]
 
-
-fd %>% 
-  ggplot()+
-  aes(x = ratio,y = log_prey)+
-  geom_point()+
-  geom_density_2d()
+AICc(best.model.h,best.model.h.2,best.model.h.ppmr) %>% mutate(delta = `AICc` - first(AICc))
+AICc(best.model.a,best.model.a.2,best.model.a.ppmr,best.model.a.no.alien) %>% rownames_to_column() %>% mutate(delta = `AICc` - first(AICc))

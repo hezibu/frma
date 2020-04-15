@@ -58,7 +58,7 @@ for (j in seq_len(100)){
 
 
 
-t.test(result.h2,result.h)
+t.test(result.h,result.h2)
 
 
 result.a2 <- vector(mode = "numeric", length = 100)
@@ -74,7 +74,7 @@ for (j in seq_len(100)){
   for (i in seq_len(k)){
     group_out <- fd_kf[i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
     all_others <- fd_kf[-i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
-    train_model <- update(best.model.a.2,data = all_others)
+    train_model <- update(best.model.a.no.alien,data = all_others)
     group_out <- group_out %>% mutate(fit = predict(train_model,group_out,re.form = ~0))
     cross_validation[[i]] <- caret::postResample(pred  = group_out$fit,obs = group_out$log_a)
   }

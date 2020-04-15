@@ -48,7 +48,7 @@ full_data %<>% mutate(duration_sec = duration*60,
 #manually filling prey_mass, not really sure about any of these.
 full_data[is.na(full_data$prey_mass)&full_data$source == "Miller et al 1992 CAN J FISH AQUAT SCI",]$prey_mass <- 0.3022
 full_data[is.na(full_data$prey_mass)&full_data$source == "Oyugi et al 2012 J OF THERMAL BIOLOGY",]$prey_mass <- 22 #11mg dry pretty confident
-full_data[is.na(full_data$prey_mass)&full_data$source == "Murray et al 2016 HYDROBIOLOGIA",]$prey_mass <- 22 # same as oyugi
+full_data[is.na(full_data$prey_mass)&full_data$source == "Murray et al 2016 HYDROBIOLOGIA",]$prey_mass <- 22# same as oyugi
 full_data[is.na(full_data$prey_mass)&full_data$source == "Alexander et al 2014 BIOL LETT",]$prey_mass <- 200 
 full_data[is.na(full_data$prey_mass)&(full_data$source == "Letcher et al 1997 CJFAS"|
                                         full_data$source == "Ryer et al 2002 CJFAS"|
@@ -60,7 +60,7 @@ full_data[is.na(full_data$prey_mass)&full_data$source == "Cowan et al 2016 CORAL
 full_data[is.na(full_data$prey_mass)&full_data$source == "Moss and Beauchamp 2007 J FISH BIOL",]$prey_mass <- 0.0002
 full_data[is.na(full_data$prey_mass)&full_data$source == "De Figueiredo et al 2007 J OF THE MARINE BIOL ASSOC OF THE UK",]$prey_mass <- 0.00015
 daphnia_weight <- full_data %>% filter(major_grouping_prey_2 == "Cladoceran") %>% .$prey_mass
-full_data[is.na(full_data$prey_mass)&full_data$source == "Koski and Johnson 2002",]$prey_mass <- sample(size = 1,x = daphnia_weight)
+full_data[is.na(full_data$prey_mass)&full_data$source == "Koski and Johnson 2002",]$prey_mass <-  0.439
 full_data[is.na(full_data$prey_mass)&full_data$source == "Murdoch et al 1975 ECOLOGY",]$prey_mass <- 3
 	
 
@@ -108,10 +108,10 @@ mod <-  lm(log_pred ~ age_week,subset(larva, age_week <= 7.5),na.action = "na.om
 rnorm(nobs(mod),mean=predict(mod),
       sd=summary(mod)$sigma)
 
+set.seed(1234)
 larva <- larva %>% 
   mutate(log_pred = if_else(!is.na(log_pred)&!is.na(age_week),
-                             log_pred,(predict(mod,newdata = .)+
-                                         rnorm(1,mean = 0,sd = sqrt(summary(mod)$sigma)))))
+                             log_pred,(predict(mod,newdata = .))))
 
 full_data <- full_data %>% 
   left_join(select(larva,-c(age,age_week)),by = c("type","idd")) %>%
@@ -153,13 +153,25 @@ full_data[full_data$species == "Coregonus fontanae",]$aspect_ratio <- 2.07458250
 
 # full_data %>% write.csv(here("data","processed","data_for_analysis.csv"))
 
-fd <- full_data %>% select(log_a,log_h,source,species,alien,log_pred,log_prey,aspect_ratio,temp,log_arena) %>% 
+fd <- full_data %>% select(log_a,water,log_h,source,species,alien,log_pred,log_prey,aspect_ratio,temp,log_arena) %>% 
   filter(complete.cases(.)) %>% 
   rename(ratio = aspect_ratio,
          zalien = alien) %>% 
   # mutate(zalien = case_when(zalien == "Y" ~  TRUE,
   #                           zalien == "N" ~ FALSE)) %>% 
-  filter(log_h > - 20) 
+  filter(log_h > - 20)
+
+fd.ppmr <- full_data %>% 
+  mutate(predator = exp(log_pred)) %>% 
+  mutate(ppmr = log(predator/prey_mass)) %>% 
+  select(log_a,log_h,water,source,species,alien,ppmr,aspect_ratio,temp,log_arena) %>% 
+  filter(complete.cases(.)) %>% 
+  rename(ratio = aspect_ratio,
+         zalien = alien) %>% 
+  # mutate(zalien = case_when(zalien == "Y" ~  TRUE,
+  #                           zalien == "N" ~ FALSE)) %>% 
+  filter(log_h > - 20)
+
 
 
 #check if invasives are in their native range:
