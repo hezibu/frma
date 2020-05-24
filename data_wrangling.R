@@ -153,24 +153,45 @@ full_data[full_data$species == "Coregonus fontanae",]$aspect_ratio <- 2.07458250
 
 # full_data %>% write.csv(here("data","processed","data_for_analysis.csv"))
 
-fd <- full_data %>% select(log_a,water,log_h,source,species,alien,log_pred,log_prey,aspect_ratio,temp,log_arena) %>% 
-  filter(complete.cases(.)) %>% 
-  rename(ratio = aspect_ratio,
-         zalien = alien) %>% 
-  # mutate(zalien = case_when(zalien == "Y" ~  TRUE,
-  #                           zalien == "N" ~ FALSE)) %>% 
+fd <- full_data %>% 
+  mutate(prey_type = paste(major_grouping_prey_1,major_grouping_prey_2,sep = " - "),
+         prey_type_coarse = ifelse(is.na(major_grouping_prey_1),"Crustacean",major_grouping_prey_1)) %>% 
+  select(log_a,water,log_h,source,species,alien,
+                           log_pred,log_prey,aspect_ratio,temp,log_arena,prey_type,prey_type_coarse) %>% 
+  filter(!(is.na(log_arena)|is.na(temp)|is.na(log_pred))) %>%
   filter(log_h > - 20)
 
+# fd <- full_data %>% 
+#   mutate(prey_type = ifelse(major_grouping_prey_1 == "Crustacean",
+#                             paste(major_grouping_prey_1,major_grouping_prey_2,sep = " - "),
+#                             major_grouping_prey_1)) %>% 
+#   mutate(prey_type = ifelse(is.na(prey_type),"Crustacean - Copepod",prey_type)) %>% 
+#   select(log_a,water,log_h,source,species,alien,
+#          log_pred,log_prey,aspect_ratio,temp,log_arena,prey_type) %>% 
+#   filter(!(is.na(log_arena)|is.na(temp)|is.na(log_pred))) %>%
+#   filter(log_h > - 20)
+
+
+
 fd.ppmr <- full_data %>% 
+  mutate(prey_type = paste(major_grouping_prey_1,major_grouping_prey_2,sep = " - "),
+         prey_type_coarse = ifelse(is.na(major_grouping_prey_1),"Crustacean",major_grouping_prey_1)) %>% 
   mutate(predator = exp(log_pred)) %>% 
   mutate(ppmr = log(predator/prey_mass)) %>% 
-  select(log_a,log_h,water,source,species,alien,ppmr,aspect_ratio,temp,log_arena) %>% 
+  select(log_a,log_h,water,source,species,alien,ppmr,aspect_ratio,temp,log_arena,prey_type,prey_type_coarse) %>% 
   filter(complete.cases(.)) %>% 
-  rename(ratio = aspect_ratio,
-         zalien = alien) %>% 
-  # mutate(zalien = case_when(zalien == "Y" ~  TRUE,
-  #                           zalien == "N" ~ FALSE)) %>% 
   filter(log_h > - 20)
+
+# fd.ppmr <- full_data %>% 
+#   mutate(prey_type = ifelse(major_grouping_prey_1 == "Crustacean",
+#                             paste(major_grouping_prey_1,major_grouping_prey_2,sep = " - "),
+#                             major_grouping_prey_1)) %>% 
+#   mutate(prey_type = ifelse(is.na(prey_type),"Crustacean - Copepod",prey_type)) %>% 
+#   mutate(predator = exp(log_pred)) %>% 
+#   mutate(ppmr = log(predator/prey_mass)) %>% 
+#   select(log_a,log_h,water,source,species,alien,ppmr,aspect_ratio,temp,log_arena,prey_type) %>% 
+#   filter(complete.cases(.)) %>% 
+#   filter(log_h > - 20)
 
 
 

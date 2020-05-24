@@ -34,6 +34,28 @@ for (i in seq_len(k)){
 result.h2[[j]] <- map(cross_validation,1) %>% as.numeric() %>% mean()
 }
 
+result.h.ppmr <- vector(mode = "numeric", length = 100)
+for (j in seq_len(100)){
+  print(j)
+  fd_kf <- fd.ppmr
+  fd_kf <- fd_kf %>% mutate(grouping = group(fd = .,k = k)) %>% 
+    group_by(grouping) %>% 
+    nest()
+  
+  
+  cross_validation <- vector(mode = "list", length = k)
+  for (i in seq_len(k)){
+    group_out <- fd_kf[i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
+    all_others <- fd_kf[-i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
+    train_model <- update(best.model.h.ppmr,data = all_others)
+    group_out <- group_out %>% mutate(fit = predict(train_model,group_out,re.form = ~0))
+    cross_validation[[i]] <- caret::postResample(pred  = group_out$fit,obs = group_out$log_h)
+  }
+  
+  result.h.ppmr[[j]] <- map(cross_validation,1) %>% as.numeric() %>% mean()
+}
+
+
 result.h <- vector(mode = "numeric", length = 100)
 for (j in seq_len(100)){
   print(j)
@@ -47,7 +69,7 @@ for (j in seq_len(100)){
   for (i in seq_len(k)){
     group_out <- fd_kf[i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
     all_others <- fd_kf[-i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
-    train_model <- update(best.model.h,data = all_others)
+    train_model <- update(best.model.h.1,data = all_others)
     group_out <- group_out %>% mutate(fit = predict(train_model,group_out,re.form = ~0))
     cross_validation[[i]] <- caret::postResample(pred  = group_out$fit,obs = group_out$log_h)
   }
@@ -56,10 +78,15 @@ for (j in seq_len(100)){
 }
 
 
-
-
-t.test(result.h,result.h2)
-
+tibble(h1 = result.h,
+       h2 = result.h2,
+       ppmr = result.h.ppmr) %>% 
+  gather(key = model,value = RMSE) %>% 
+  ggplot()+
+  aes(x = model, y = RMSE)+
+  geom_violin()+
+  stat_summary(geom = "point",fun.data =  "mean_se")+
+  stat_summary(geom = "errorbar", fun.data =  "mean_se")
 
 result.a2 <- vector(mode = "numeric", length = 100)
 for (j in seq_len(100)){
@@ -74,13 +101,36 @@ for (j in seq_len(100)){
   for (i in seq_len(k)){
     group_out <- fd_kf[i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
     all_others <- fd_kf[-i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
-    train_model <- update(best.model.a.no.alien,data = all_others)
+    train_model <- update(best.model.a.2,data = all_others)
     group_out <- group_out %>% mutate(fit = predict(train_model,group_out,re.form = ~0))
     cross_validation[[i]] <- caret::postResample(pred  = group_out$fit,obs = group_out$log_a)
   }
   
   result.a2[[j]] <- map(cross_validation,1) %>% as.numeric() %>% mean()
 }
+
+result.a.ppmr <- vector(mode = "numeric", length = 100)
+for (j in seq_len(100)){
+  print(j)
+  fd_kf <- fd.ppmr
+  fd_kf <- fd_kf %>% mutate(grouping = group(fd = .,k = k)) %>% 
+    group_by(grouping) %>% 
+    nest()
+  
+  
+  cross_validation <- vector(mode = "list", length = k)
+  for (i in seq_len(k)){
+    group_out <- fd_kf[i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
+    all_others <- fd_kf[-i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
+    train_model <- update(best.model.a.ppmr,data = all_others)
+    group_out <- group_out %>% mutate(fit = predict(train_model,group_out,re.form = ~0))
+    cross_validation[[i]] <- caret::postResample(pred  = group_out$fit,obs = group_out$log_a)
+  }
+  
+  result.a.ppmr[[j]] <- map(cross_validation,1) %>% as.numeric() %>% mean()
+}
+
+
 
 result.a <- vector(mode = "numeric", length = 100)
 for (j in seq_len(100)){
@@ -95,7 +145,7 @@ for (j in seq_len(100)){
   for (i in seq_len(k)){
     group_out <- fd_kf[i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
     all_others <- fd_kf[-i,] %>% ungroup %>% dplyr::select(-grouping) %>% unnest(cols = c(data))
-    train_model <- update(best.model.a,data = all_others)
+    train_model <- update(best.model.a.1,data = all_others)
     group_out <- group_out %>% mutate(fit = predict(train_model,group_out,re.form = ~0))
     cross_validation[[i]] <- caret::postResample(pred  = group_out$fit,obs = group_out$log_a)
   }
@@ -106,4 +156,19 @@ for (j in seq_len(100)){
 
 
 
-t.test(result.a,result.a2)
+tibble(a1 = result.a,
+       a2 = result.a2,
+       ppmr = result.a.ppmr) %>% 
+  gather(key = model,value = RMSE) %>% 
+  ggplot()+
+  aes(x = model, y = RMSE)+
+  geom_violin()+
+  stat_summary(geom = "point",fun.data =  "mean_se")+
+  stat_summary(geom = "errorbar", fun.data =  "mean_se")
+
+tibble(a1 = result.a,
+       a2 = result.a2,
+       ppmr = result.a.ppmr) %>% 
+  gather(key = model,value = RMSE) %>% 
+  lm(RMSE ~ model,data = .) %>% 
+  summary
