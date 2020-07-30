@@ -3,12 +3,12 @@ source("get_models_a.R")
 source("get_models_h.R")
 
 
-AICc(best.model.a.1,best.model.a.2,best.model.a.ppmr) %>%
+AICc(best.model.a.1,best.model.a.2,best.model.a.ppmr,best.model.a.ppmr.2) %>%
   rownames_to_column(var = "model") %>%
   arrange(AICc) %>% 
   mutate(delta = `AICc` - first(AICc))
 
-AICc(best.model.h.1,best.model.h.2,best.model.h.ppmr) %>%
+AICc(best.model.h.1,best.model.h.2,best.model.h.ppmr,best.models.h.ppmr.2) %>%
   rownames_to_column(var = "model") %>%
   arrange(AICc) %>% 
   mutate(delta = `AICc` - first(AICc))
@@ -24,7 +24,7 @@ fd.ppmr$ppmr %>% quantile(c(0.05,0.95))
 
 gridExtra::grid.arrange(
   plot_model(best.model.a.1, type = "pred",
-             terms = c("temp [10,27]","log_pred [-4,6]","log_prey [-8,5]"))+ggtitle("A")
+             terms = c("temp [10,27]","log_pred [-4,6]"))+ggtitle("A")
   ,
   plot_model(best.model.a.1, type = "pred",
              terms = c("log_pred [-2,10]","log_prey [-8,5]","aspect_ratio [1.14, 2.6]"))+ggtitle("B")
@@ -46,7 +46,7 @@ gridExtra::grid.arrange(
              terms = c("log_prey [-8,5]","temp [10,27]","aspect_ratio [1.14, 2.6]"))+ggtitle("B")
 )
 
-plot_model(best.model.h.1, type = "pred",
+    plot_model(best.model.h.1, type = "pred",
            terms = c("temp [10,27]","log_prey [-8,5]","aspect_ratio [1.14, 2.6]"))+ggtitle("B")
 
 
