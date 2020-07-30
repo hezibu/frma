@@ -1,8 +1,21 @@
 fd.forest <- fd %>% 
-  mutate(alien = zalien == "Y")
+  mutate(alien = alien == "Y",
+         water = water == "Fresh")
 
 a.forest <- fd.forest %>%
-  randomForest(log_a ~ log_pred + log_prey + ratio + temp + alien, data = .,localImp = T)  
+  randomForest(log_a ~ log_pred + log_prey + aspect_ratio + temp + alien + water, data = .,localImp = T)  
+
+randomForestExplainer::explain_forest(a.forest,interactions = TRUE)
+
+fd.forest.ppmr <- fd.ppmr %>% 
+  mutate(alien = alien == "Y",
+         water = water == "Fresh")
+
+a.forest.ppmr <- fd.forest.ppmr %>%
+  randomForest(log_a ~ ppmr + aspect_ratio + temp + alien + water, data = .,localImp = T)  
+
+randomForestExplainer::explain_forest(a.forest.ppmr,interactions = TRUE)
+
 
 varImpPlot(a.forest)
 
@@ -23,26 +36,19 @@ fd %>% mutate(zalien = as.numeric(as.factor(zalien))) %>%
   
   
   
-  
-  
-  randomForestExplainer::explain_forest(a.forest)
 
-fd %>% mutate(zalien = as.numeric(as.factor(zalien)),
-              temp2 = temp^2) %>% 
-  randomForest(log_h ~ log_pred + log_prey + zalien + ratio + temp + temp2, data = .,importance=TRUE,proximity=TRUE)  %>%
-randomForestExplainer::explain_forest()
 
-library(relaimpo)
-install.packages("corpcor")
 
 relaimpo::calc.relimp(best.model.a,type = "lmg")
 
 
-h.forest <- fd %>%
-  randomForest(log_h ~ log_pred + log_prey + zalien + ratio + temp, data = .,localImp = T)  
+h.forest <- fd.forest %>%
+  randomForest(log_h ~ log_pred + log_prey + aspect_ratio + temp + alien + water, data = .,localImp = T) 
 
-randomForest::importance(a.forest)
+randomForestExplainer::explain_forest(h.forest,interactions = TRUE)
 
-a.forest$mse
 
-caret::varImp(a.forest)
+h.forest.ppmr <- fd.forest.ppmr %>%
+  randomForest(log_h ~ ppmr + aspect_ratio + temp + alien + water, data = .,localImp = T)  
+
+randomForestExplainer::explain_forest(h.forest.ppmr,interactions = TRUE)
