@@ -50,18 +50,23 @@ full_data[is.na(full_data$prey_mass)&full_data$source == "Miller et al 1992 CAN 
 full_data[is.na(full_data$prey_mass)&full_data$source == "Oyugi et al 2012 J OF THERMAL BIOLOGY",]$prey_mass <- 22 #11mg dry pretty confident
 full_data[is.na(full_data$prey_mass)&full_data$source == "Murray et al 2016 HYDROBIOLOGIA",]$prey_mass <- 22# same as oyugi
 full_data[is.na(full_data$prey_mass)&full_data$source == "Alexander et al 2014 BIOL LETT",]$prey_mass <- 200 
+branchiopod_weight <- full_data %>% filter(major_grouping_prey_2 == "Branchiopod") %>% .$prey_mass
 full_data[is.na(full_data$prey_mass)&(full_data$source == "Letcher et al 1997 CJFAS"|
                                         full_data$source == "Ryer et al 2002 CJFAS"|
                                         full_data$source == "Gibson and Ezzi 1992 J OF FISH BIOLOGY"|
                                         full_data$source == "Vollset and Bailey 2011 J OF FISH BIOLOGY"|
-                                        full_data$source == "S?rnes and Aksnes 2004 LIMNOLOGY AND OCEANOGRAPHY"),]$prey_mass <- 0.7
-full_data[is.na(full_data$prey_mass)&full_data$source == "Ljunggren and Sandstr?m 2007 J OF FISH BIOLOGY",]$prey_mass <- 1
-full_data[is.na(full_data$prey_mass)&full_data$source == "Cowan et al 2016 CORAL REEFS",]$prey_mass <- 0.0005
-full_data[is.na(full_data$prey_mass)&full_data$source == "Moss and Beauchamp 2007 J FISH BIOL",]$prey_mass <- 0.0002
-full_data[is.na(full_data$prey_mass)&full_data$source == "De Figueiredo et al 2007 J OF THE MARINE BIOL ASSOC OF THE UK",]$prey_mass <- 0.00015
+                                        full_data$source == "S?rnes and Aksnes 2004 LIMNOLOGY AND OCEANOGRAPHY"),]$prey_mass <- mean(branchiopod_weight,na.rm = T)
+full_data[is.na(full_data$prey_mass)&full_data$source == "Ljunggren and Sandstr?m 2007 J OF FISH BIOLOGY",]$prey_mass <- 1 #mysid weight for Moss and Beauchamp 2007 J
+copepod_weight <- full_data %>% filter(major_grouping_prey_2 == "Copepod") %>% .$prey_mass
+full_data[is.na(full_data$prey_mass)&full_data$source == "Moss and Beauchamp 2007 J FISH BIOL",]$prey_mass <- mean(copepod_weight,na.rm = T)
+full_data[is.na(full_data$prey_mass)&full_data$source == "Cowan et al 2016 CORAL REEFS",]$prey_mass <- 0.15
+# The Role of Maternal Nutrition on Oocyte Size and Quality, with Respect to Early Larval Development in The Coral-Eating Starfish, Acanthaster planci
+# Interactive Effects of Endogenous and Exogenous Nutrition on Larval Development for Crown-Of-Thorns Starfish 
+# Volume of bipinnaria...
+#full_data[is.na(full_data$prey_mass)&full_data$source == "De Figueiredo et al 2007 J OF THE MARINE BIOL ASSOC OF THE UK",]$prey_mass <- 0.00015
 daphnia_weight <- full_data %>% filter(major_grouping_prey_2 == "Cladoceran") %>% .$prey_mass
-full_data[is.na(full_data$prey_mass)&full_data$source == "Koski and Johnson 2002",]$prey_mass <-  0.439
-full_data[is.na(full_data$prey_mass)&full_data$source == "Murdoch et al 1975 ECOLOGY",]$prey_mass <- 3
+full_data[is.na(full_data$prey_mass)&full_data$source == "Koski and Johnson 2002",]$prey_mass <- mean(daphnia_weight,na.rm = T)
+#full_data[is.na(full_data$prey_mass)&full_data$source == "Murdoch et al 1975 ECOLOGY",]$prey_mass <- 3
 	
 
 #get wet weight for larvae:
@@ -158,7 +163,7 @@ fd <- full_data %>%
          prey_type_coarse = ifelse(is.na(major_grouping_prey_1),"Crustacean",major_grouping_prey_1)) %>% 
   select(log_a,water,log_h,source,species,alien,
                            log_pred,log_prey,aspect_ratio,temp,log_arena,prey_type,prey_type_coarse) %>% 
-  filter(!(is.na(log_arena)|is.na(temp)|is.na(log_pred))) %>%
+  filter(!(is.na(log_arena)|is.na(temp)|is.na(log_pred)|is.na(log_prey))) %>%
   filter(log_h > - 20)
 
 # fd <- full_data %>% 
@@ -181,6 +186,9 @@ fd.ppmr <- full_data %>%
   select(log_a,log_h,water,source,species,alien,ppmr,aspect_ratio,temp,log_arena,prey_type,prey_type_coarse) %>% 
   filter(complete.cases(.)) %>% 
   filter(log_h > - 20)
+
+data_for_analysis <- left_join(fd,fd.ppmr)
+
 
 # fd.ppmr <- full_data %>% 
 #   mutate(prey_type = ifelse(major_grouping_prey_1 == "Crustacean",
